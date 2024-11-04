@@ -99,6 +99,8 @@ _基于意图开发平台架构(decentralized)_
 即可组合意图，由一组相关意图形成的路径。
 
 #### Intents DSL
+> [Li-language]('https://github.com/0xnicholas/torus/li-language/README.md')
+
 设计一种声明式语言`Li`来进行意图表达，这类基于意图的领域特定语言一般具有以下特性：
 
 - 用于定义状态机的结构化语言
@@ -247,7 +249,7 @@ SHOW TRANSACTION tx1 [LIKE 'pattern' | where expr];
 - Flashbots SUAVE (Multi-chain Block-related Intent)
 - Anoma (Generalized Intent for Anoma Protocols)
 
-CoW Swap & 1inch fusion（limit order intent）
+**CoW Swap & 1inch fusion（limit order intent）**
 
 - 意图表达和授权： 
   - Cow Swap 和 1inch Fusion 平台上的交易者通过与平台界面交互来表达他们的意图，为所需交易或限价订单提供明确的指令。 
@@ -265,7 +267,7 @@ CoW Swap & 1inch fusion（limit order intent）
   - 验证和结算过程发生在求解器执行交易或限价订单之后。解决者可以利用授予结算合约的 ERC20 批准代表用户转移代币。结算合约验证用户意图的签名，并确保执行符合指定的限价和数量（由 EIP-1271 启用）。此验证确认已成功完成预期交易或限价订单。
   - 一旦验证，结算合约有助于将资金适当分配给参与交易的解决者和用户。
 
-UniswapX (Swap intents)
+**UniswapX (Swap intents)**
 
 UniswapX的新功能可以分为2个主要部分： 
 - 通过荷兰式拍卖机制签署订单 
@@ -277,14 +279,14 @@ UniswapX的新功能可以分为2个主要部分：
   - 荷兰订单的执行价格取决于其包含在区块中的时间。对于交换者来说，订单的起始价格估计比当前市场价格更好——例如，如果当前市场价格为每 ETH 1,000 USDC，则卖出订单的起始价格可能为每 ETH 1,050 USDC。然后订单的价格会下降，直到达到交换者可以接受的最差价格（例如 995 USDC/ETH）。一旦对订单有利可图，填充者就会被激励去填充订单。如果他们等待太久，他们就有可能将订单拱手让给愿意获取较小利润的另一个填充者。
   - UniswapX 还可以将 RFQ（允许订单指定一个填充者，该填充者在短时间内获得填充订单的专有权利）纳入初始荷兰价格设置，在这种情况下，选择过程几乎与 1inch Fusion 的拍卖方法相同。
   - 与 UniswapX 和 1inch 的独立拍卖相比，Cow Swap 更像是批量拍卖，可以合并订单并匹配 CoW。
-- 求解过程和验证结算 与Cow Swap和1inch类似（更多详情见图表）
+- 求解过程和验证结算 与Cow Swap和1inch类似
 
 跨链互换可以通过类似的流程来实现，主要区别在于验证和结算以实现多域互换：
 - 求解者需要在原链上存入更多的债券资产，以确保安全并启用乐观的跨链协议
 - 需要额外的结算预言机来输入源链的验证合约
 - 需要UniswapX在不同域部署相应的结算和验证合约
 
-AA (Wallet-level intents)
+**AA (Wallet-level intents)**
 - 意图表达和授权： 
   - 当钱包所有者想要执行特定操作时，意图表达和授权的过程就开始了。他们通常通过 4337 钱包界面制作用户操作来表达他们的意图。 
   - 在链下，钱包所有者请求捆绑器代表他们处理用户操作，根据意图授权有限的控制。例如，钱包所有者可能会授权私钥能够从您的主账户进行交易，但只能与 Dapp XYZ 的中心合约进行交易。
@@ -299,7 +301,7 @@ AA (Wallet-level intents)
 - 验证与结算： 
   - AA系统的入口点在链上验证并结算操作。它确保用户操作在执行所需操作之前满足要求和安全检查。一旦操作成功执行，入口点就会从钱包存入的资金中将 ETH 退还给捆绑器。这种退款机制补偿了捆绑商的工作和预付款。
 
-Essential (Intent-centric AA standard)
+**Essential (Intent-centric AA standard)**
 
 要点：短期内，它将是一个基于资产的意图标准（类似于erc-4337模型，但支持更通用的意图），并具有一组便利的基础设施。从长远来看，它还将提供模块化意图层和新的基于约束的语言，摆脱以太坊架构的限制并提供更好的意图执行。
 - 意图表达和授权： 
@@ -316,7 +318,7 @@ Essential (Intent-centric AA standard)
 - 验证与结算： 
   - 验证和结算都是由求解器触发特定的链上智能合约来验证和分割付款而发生的。将有一个核心合同，所有解决方案以及所有意图和解决方案都将提交到该合同中，并且可以根据基本标准进行扩展。 
 
-Flashbots SUAVE (Multi-chain Block-related Intent)
+**Flashbots SUAVE (Multi-chain Block-related Intent)**
 
 与前面示例中通过智能合约进行意图结算相比，SUAVE 采用了一种专门的方法，利用专用链进行结算，该链也充当消息传递层。
 与账户抽象 (AA) 和特定意图的应用程序相比，SUAVE 引入了将资金桥接至 SUAVE 链的额外步骤。这一步骤主要是由 SUAVE 的多链功能以及对更具成本效益、支持隐私的交易的渴望推动的。 
@@ -336,7 +338,7 @@ SUAVE 刚刚宣布推出 MEVM，这是对 EVM 的强大修改，并为 MEV 用�
 - 验证与结算： 
   - 为了确保意图的有效性和结算交易，SUAVE 使用预言机和 SUAVE 验证器。预言机提供外部数据来验证意图的执行，而 SUAVE 验证器则在 SUAVE 链上验证和结算意图。 
 
-Anoma (Generalized Intent for Anoma Protocols)
+**Anoma (Generalized Intent for Anoma Protocols)**
 
 Anoma是一个类似于Cosmos的通用架构，并准备推出支持IBC的第一层权益证明（PoS）链。它将以意图为中心的设计与由 Anoma 虚拟机 (VM) 提供支持的同构协议相结合，同时还提供异构安全功能（不同的 Anoma 协议具有不同的共识机制）。
 - 意图表达和授权： 
