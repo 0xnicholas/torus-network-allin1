@@ -1,4 +1,5 @@
-grammar LIJSON;
+
+grammar JSON;
 
 json
     : value EOF
@@ -53,7 +54,7 @@ NUMBER
     ;
 
 fragment INT
-    // integer part forbis leading 0s (e.g. `01`)
+    // integer part forbids leading 0s (e.g. `01`)
     : '0'
     | [1-9] [0-9]*
     ;
@@ -62,10 +63,8 @@ fragment INT
 
 fragment EXP
     // exponent number permits leading 0s (e.g. `1e01`)
-    : [Ee] [+\-]? [0-9]+
+    : [Ee] [+-]? [0-9]+
     ;
-
-// \- since - means "range" inside [...]
 
 WS
     : [ \t\n\r]+ -> skip

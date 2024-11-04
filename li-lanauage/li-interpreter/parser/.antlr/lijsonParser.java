@@ -1,4 +1,4 @@
-// Generated from /Users/nicholasl/Documents/0xnicholas/torus/li-lanauage/li-interpreter/LIJSON.g4 by ANTLR 4.13.1
+// Generated from /Users/nicholasl/Documents/0xnicholas/torus/li-lanauage/li-interpreter/parser/lijson.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
-public class LIJSONParser extends Parser {
+public class lijsonParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -75,7 +75,7 @@ public class LIJSONParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "LIJSON.g4"; }
+	public String getGrammarFileName() { return "lijson.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -86,7 +86,7 @@ public class LIJSONParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public LIJSONParser(TokenStream input) {
+	public lijsonParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -96,7 +96,7 @@ public class LIJSONParser extends Parser {
 		public ValueContext value() {
 			return getRuleContext(ValueContext.class,0);
 		}
-		public TerminalNode EOF() { return getToken(LIJSONParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(lijsonParser.EOF, 0); }
 		public JsonContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -199,7 +199,7 @@ public class LIJSONParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class PairContext extends ParserRuleContext {
-		public TerminalNode STRING() { return getToken(LIJSONParser.STRING, 0); }
+		public TerminalNode STRING() { return getToken(lijsonParser.STRING, 0); }
 		public ValueContext value() {
 			return getRuleContext(ValueContext.class,0);
 		}
@@ -307,8 +307,8 @@ public class LIJSONParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ValueContext extends ParserRuleContext {
-		public TerminalNode STRING() { return getToken(LIJSONParser.STRING, 0); }
-		public TerminalNode NUMBER() { return getToken(LIJSONParser.NUMBER, 0); }
+		public TerminalNode STRING() { return getToken(lijsonParser.STRING, 0); }
+		public TerminalNode NUMBER() { return getToken(lijsonParser.NUMBER, 0); }
 		public ObjContext obj() {
 			return getRuleContext(ObjContext.class,0);
 		}
