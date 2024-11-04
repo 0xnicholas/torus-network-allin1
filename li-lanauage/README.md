@@ -97,22 +97,6 @@ State types
 
 ...
 
-## Torus Service Provider
-> `Li` backed的服务层, 可视为独立产品 [torus-service]
-
-Service Provider提供用于与DeFi协议进行交互的统一API。Dapp与每个协议进行构建集成既耗时, 成本高昂且容易出错。Service Provider API允许开发人员构建一次并与所有协议集成。
-
-`SP` provides the tools to execute and fetch all relevant metadata of DeFi protocols enabling developers to build the next generation of financial applications.
-
-**Key points**:
-- Native transaction bundling.  允许用户在一个atomic transaction中执行多个交易
-- DeFi actions. 提供多种DeFi操作, 可以batch以创建自定义工作流程。
-- Best route execution. 考虑到gas, 滑点和收益, 给定的所需路径获取最佳路线(如果使用者对最佳路线不满意, 可通过solver network需求solution).
-- Standardization. 标准集成.
-- Metadata. 提供与DeFi协议相关的元数据.
-
-![service-provider-highlevel](../resources/images/service-provider1.png)
-
 
 ## `Li` Interpreter
 [anltrv4](https://github.com/antlr/antlr4)
