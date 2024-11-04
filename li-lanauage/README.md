@@ -20,3 +20,93 @@ Solver根据意图段顺序和上下文来执行意图，一个Segment就是一�
 |`protocol interaction`| 与其他DeFi协议和服务交互, `ServiceProvider`|
 |`intrinsic function`| 内置函数|
 |`errors`| 预定义错误代码|
+
+### States
+State types
+- `pass, wait, interval, choice, parallel, map, succeed, fail`
+- `task`
+- (outcome primitive) `swap(buy/sell or in/out, include lending), transfer, bridge`
+
+```JSON
+"swapState1": {
+    "comment": "",
+    "type": "swap",
+    "class": "market",
+    "tokenIn": "DAI",
+    "tokenOut": "ETH",
+    "tokenInAmount": 5000.00,
+    "fee": 2.5
+    "next": "nextState"
+}
+```
+
+> 例：在余额充足的情况，CEX市场价或Uniswap 池上的当前 TWAP（时间加权平均价格）低于用户签名价格时进行交易。
+```JSON
+"twapPrice": {
+    "type": "task",
+    "resource": "",
+    "result": "$.twapPrice",
+    "source": "uniswap"
+},
+
+"marketPrice": {
+    "type": "task",
+    "resource": "",
+    "result": "$.marketPrice",
+    "source": "chainlink"
+}
+
+"choiceState1": {
+    "type": "choice",
+    "choices": [
+        {
+            "var": "$.balance",
+            "numericGreaterThanEquals": 2000,
+            "next": "choiceState2"
+        }
+    ]
+    "default": "defaultEvent"
+}
+
+"choiceState2": {
+    "comment": "",
+    "type": "choice",
+    "choices": [ 
+        {
+            "or":[
+                {
+                    "var": "$.sigPrice",
+                    "numericLessThan": "$.marketPrice"
+                },
+                {
+                    "var": "$.sigPrice",
+                    "numericLessThan": "$.twapPrice"
+                }
+            ],
+            "next": "swapState"
+        }
+    ],
+    "default": "defaultEvent"
+}
+```
+
+...
+
+## Service Provider
+> `Li` backed的服务层
+
+Service Provider提供用于与DeFi协议进行交互的统一API。Dapp与每个协议进行构建集成既耗时, 成本高昂且容易出错。Service Provider API允许开发人员构建一次并与所有协议集成。
+
+`SP` provides the tools to execute and fetch all relevant metadata of DeFi protocols enabling developers to build the next generation of financial applications.
+
+Key points:
+- Native transaction bundling.  允许用户在一个atomic transaction中执行多个交易
+- DeFi actions.
+- Best route execution.
+- Standardization.
+- Metadata.
+
+
+
+## `Li` Interpreter
+[anltrv4](https://github.com/antlr/antlr4)

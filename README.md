@@ -200,8 +200,10 @@ SHOW TRANSACTION tx1 [LIKE 'pattern' | where expr];
 
 
 #### `Li` Service Provider
-- [] DeFi 服务封装
-- [] 区块链操作进一步封装(类似Alchemy)
+[Service Provider](https://github.com/0xnicholas/torus/li-langauge/li-service-provider) 提供用于与DeFi协议进行交互的统一API。Dapp与每个协议进行构建集成既耗时, 成本高昂且容易出错。Service Provider API允许开发人员构建一次并与所有协议集成。
+
+- [x] DeFi 服务封装
+- [] 区块链操作进一步封装
 
 [torus-service-provider]
 
