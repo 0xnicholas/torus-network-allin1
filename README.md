@@ -1,3 +1,17 @@
+- [Torus Network (intent-centric)](#torus-network--intent-centric-)
+  * [Intent](#intent)
+  * [Intent重塑交易订单流](#intent-------)
+  * [Torus: Intent-centric protocol / Infra](#torus--intent-centric-protocol---infra)
+    + [产品特性设定](#------)
+    + [Intent Expression](#intent-expression)
+      - [Intent types](#intent-types)
+      - [Intents DSL](#intents-dsl)
+      - [MVC model](#mvc-model)
+      - [`Li` Service Provider](#-li--service-provider)
+    + [Solver Network](#solver-network)
+      - [Solver Candidate](#solver-candidate)
+  * [意图协议案例分析](#--------)
+
 # Torus Network (intent-centric)
 > 本项目探讨一种基于意图的全新dapp开发模式，通过intent-based protocol&solver network来实现对区块链操作复杂度的封装，提高开发效率及web3开发普适度。该模式可广泛用于通用dapp开发、交易机器人等应用。- @nicholaslico
 
@@ -33,7 +47,7 @@
 
 该开发平台核心是以意图为中心的协议，<u>它构建了一个无许可或有许可的解决者网络，解决者竞争提出最佳解决方案并通过协议验证和结算。它通过一种对区块链操作的领域特定语言面向开发者，能与智能合约配合实现一切需求，与前端技术一起可完备开发dapp。</u>
 
-![intent-based-process](/resources/images/intent-based-process1.png "intent-based process")
+![intent-based-process](./resources/images/intent-based-process1.png "intent-based process")
 _基于意图开发平台架构(decentralized)_
 
 我们将协议方案分为5个主要部分和主要问题，
@@ -200,10 +214,10 @@ SHOW TRANSACTION tx1 [LIKE 'pattern' | where expr];
 
 
 #### `Li` Service Provider
-[Service Provider](https://github.com/0xnicholas/torus/li-langauge/li-service-provider) 提供用于与DeFi协议进行交互的统一API。Dapp与每个协议进行构建集成既耗时, 成本高昂且容易出错。Service Provider API允许开发人员构建一次并与所有协议集成。
+[Service Provider](https://github.com/0xnicholas/torus/li-langauge#torus-service-provider) 提供用于与DeFi协议进行交互的统一API。Dapp与每个协议进行构建集成既耗时, 成本高昂且容易出错。Service Provider API允许开发人员构建一次并与所有协议集成。
 
 - [x] DeFi 服务封装
-- [] 区块链操作进一步封装
+- [x] 区块链操作进一步封装
 
 [torus-service-provider]
 
