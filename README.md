@@ -45,7 +45,7 @@
 
 ## Torus: Intent-centric protocol / Infra
 
-该开发平台核心是以意图为中心的协议，<u>它构建了一个无许可或有许可的解决者网络，解决者竞争提出最佳解决方案并通过协议验证和结算。它通过一种对区块链操作的领域特定语言面向开发者，能与智能合约配合实现一切需求，与前端技术一起可完备开发dapp。</u>
+该开发平台核心是以意图为中心的协议，<ins>它构建了一个无许可或有许可的解决者网络，解决者竞争提出最佳解决方案并通过协议验证和结算。它通过一种对区块链操作的领域特定语言面向开发者，能与智能合约配合实现一切需求，与前端技术一起可完备开发dapp。</ins>
 
 ![intent-based-process](./resources/images/intent-based-process1.png "intent-based process")
 _基于意图开发平台架构(decentralized)_
@@ -60,14 +60,14 @@ _基于意图开发平台架构(decentralized)_
 ### 产品特性设定
 | | | |
 |:---|:---|:---|
-| Intent expression and auth |<u>*Intent type*</u>| Any intents that can be written in DSL, omnichain enabled.|
-| |<u>*Interaction*</u>| Intent-based dapp, intents DSL |
-|Solver candidate| <u>*Entry criteria*</u> |  Gated or Permissionless |
-|Solving| <u>*Solving process*</u> | ... ; Simulate offchian, build bundles, propose bundles to the destined chain / omnichain |
-|Solver competition| <u>*Orderflow auctions*</u> | Orderflow auctions - Transaction execution service|
-| | <u>*Bid selection*</u> | Max user cashback, winner-takes-all |
-| Settlement and validation | <u>*How to validate?*</u>| A smart contract checks the validity|
-| | <u>*Settlement system*</u> | Settle on omnichain through protocol, release by smart contract |
+| Intent expression and auth |<ins>*Intent type*</ins>| Any intents that can be written in DSL, omnichain enabled.|
+| |<ins>*Interaction*</ins>| Intent-based dapp, intents DSL |
+|Solver candidate| <ins>*Entry criteria*</ins> |  Gated or Permissionless |
+|Solving| <ins>*Solving process*</ins> | ... ; Simulate offchian, build bundles, propose bundles to the destined chain / omnichain |
+|Solver competition| <ins>*Orderflow auctions*</ins> | Orderflow auctions - Transaction execution service|
+| | <ins>*Bid selection*</ins> | Max user cashback, winner-takes-all |
+| Settlement and validation | <ins>*How to validate?*</ins>| A smart contract checks the validity|
+| | <ins>*Settlement system*</ins> | Settle on omnichain through protocol, release by smart contract |
 
 ### Intent Expression
 > " tell me what to do, or tell me what you want."

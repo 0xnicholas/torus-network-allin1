@@ -4,7 +4,6 @@
   * [Torus Service Provider](#torus-service-provider)
   * [`Li` Interpreter](#-li--interpreter)
 
-
 # `Li` (JSON-based Intetns Language)
 
 Torus将意图看作是一种状态机，并表达为一种基于JSON的语言`Li`，用于描述该状态机。这样定义的状态机可由"Solver"执行。意图状态机是面向开发者设计的，可由Solver解释执行，若必要Solver还可以对该意图状态进行优化修改，最大收益实现用户意图。
