@@ -220,9 +220,6 @@ SHOW TRANSACTION tx1 [LIKE 'pattern' | where expr];
 
 ![service-provider-highlevel](./resources/images/service-provider1.png)
 
-- [x] DeFi 服务封装
-- [x] 流动性聚合
-
 ### Solver Network
 > Solver是进行意图实现的一类开发者bots
 
