@@ -214,16 +214,14 @@ SHOW TRANSACTION tx1 [LIKE 'pattern' | where expr];
 
 
 ### Toru Service Provider
-> `Li` backed的服务层, 可视为独立产品 [torus-service]
+> `Li` backed的服务层, 可视为独立产品 详见[torus-service](https://github.com/0xnicholas/torus-service)
 
-[Service Provider](https://github.com/0xnicholas/torus-service) 提供用于与DeFi协议进行交互的统一API。Dapp与每个协议进行构建集成既耗时, 成本高昂且容易出错。Service Provider API允许开发人员构建一次并与所有协议集成。
-
-- [x] DeFi 服务封装
-- [x] 区块链操作进一步封装
+[Torus Service](https://github.com/0xnicholas/torus-service) 提供用于与区块链生态进行交互的统一API。Dapp与每个链/协议/dapp进行交互既耗时, 成本高昂且容易出错。`Service Provider` API允许开发人员构建一次并与所有产品集成。（灵感来源- MuleSoft from Salesforce）
 
 ![service-provider-highlevel](./resources/images/service-provider1.png)
 
-[torus-service-provider](https://github.com/0xnicholas/torus-service)
+- [x] DeFi 服务封装
+- [x] 流动性聚合
 
 ### Solver Network
 > Solver是进行意图实现的一类开发者bots
