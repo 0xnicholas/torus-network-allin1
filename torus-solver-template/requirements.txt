@@ -1,0 +1,9 @@
+black==23.12.1
+fastapi==0.108.0
+uvicorn==0.25.0
+pylint==3.0.3
+python-dotenv==1.0.0
+pydantic==2.5.3
+pytest==7.4.4
+makefun==1.15.2
+mypy==1.8.0
