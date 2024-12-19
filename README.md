@@ -205,12 +205,14 @@ SHOW INTENT STATUS;
 SHOW TRANSACTION tx1 [LIKE 'pattern' | where expr];
 ```
 
-#### MVC model
-`Li`语言能进行全链操作，进行有条件、可组合意图以及调用自定义服务（如DeFi协议，API等）。这时我们发现一种基于意图的经典MVC开发模式变得可能，由此开发dapp的结构变得十分简洁。
+#### MIT model
+`Li`语言能进行全链操作，进行有条件、可组合意图以及调用自定义服务（如DeFi协议，API等），使得通过MIT模式开发dapp的结构变得十分简洁。
 
-![iintent-based MVC pattern](/resources/images/intent-based-MVC-pattern1.png "intent-based MVC pattern")
-
-[表现层] user interface (react hooks)   [意图控制层] 意图逻辑  [区块链抽象层] 交易操作
+|||
+|---|---|
+|[表现层] |template (react hooks) | 
+|[意图控制层] |意图逻辑 | 
+|[区块链抽象层] |类ORM操作区块链| 
 
 
 ### Toru Service Provider
